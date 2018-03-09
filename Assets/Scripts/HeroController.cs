@@ -35,7 +35,7 @@ public class HeroController : MonoBehaviour
 
     void Update()
     {
-        if(isJumping)
+        if (isJumping)
         {
             State = CharState.jump;
         }
