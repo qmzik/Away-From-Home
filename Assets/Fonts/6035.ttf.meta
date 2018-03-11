@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: b05ddc42f6a627b49baab3782d6081e8
-timeCreated: 1519744182
+guid: a9cfa4a1e4b9ae54bad18467fc87eebd
+timeCreated: 1520778289
 licenseType: Free
 TrueTypeFontImporter:
+  externalObjects: {}
   serializedVersion: 4
   fontSize: 16
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: fixed_v01
+  fontName: Press Start
   fontNames:
-  - fixed_v01
+  - Press Start
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
