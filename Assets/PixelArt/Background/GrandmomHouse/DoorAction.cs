@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorAction : MonoBehaviour {
 
+    public string SceneName;
     public GameObject info;
     bool canIGo = false;
 
@@ -25,7 +26,7 @@ public class DoorAction : MonoBehaviour {
     void Update () {
 		if(Input.GetKeyDown(KeyCode.E) && canIGo)
         {
-            SceneManager.LoadScene("TheForest");
+            SceneManager.LoadScene(SceneName);
         }
 	}
 }
