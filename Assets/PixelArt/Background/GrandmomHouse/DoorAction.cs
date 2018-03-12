@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorAction : MonoBehaviour {
 
@@ -24,7 +25,7 @@ public class DoorAction : MonoBehaviour {
     void Update () {
 		if(Input.GetKeyDown(KeyCode.E) && canIGo)
         {
-            Debug.Log("I leave, bye bye");
+            SceneManager.LoadScene("TheForest");
         }
 	}
 }
