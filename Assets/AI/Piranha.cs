@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Piranha : AbstractAI {
+    public GameObject border;
+    bool colliding = false;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +15,9 @@ public class Piranha : AbstractAI {
 	
 	// Update is called once per frame
 	void Update () {
+
+        colliding = Physics2D.Linecast(border.transform.position, border.transform.position);
+
         if (direction == Direction.left)
         {
             MoveLeft();
@@ -22,13 +27,20 @@ public class Piranha : AbstractAI {
         {
             MoveRight();
         }
+
+        if (colliding)
+        {
+            FlipDirection();
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+
+   /* private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
             FlipDirection();
         }
-    }
+    }*/
 }

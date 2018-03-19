@@ -26,8 +26,7 @@ namespace Assets.Scripts
             {
                 direction = Direction.left;
             }
-
-            if (direction == Direction.left)
+            else if (direction == Direction.left)
             {
                 direction = Direction.right;
             }
