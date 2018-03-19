@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour {
         heroController = GameObject.FindGameObjectWithTag("Player").GetComponent<HeroController>();
 	}
 	
+
 	public void StartConversation(Dialogue dialogue)
     {
         heroController.enabled = false;
