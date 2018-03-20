@@ -111,7 +111,7 @@ public class HeroController : MonoBehaviour
 
     void Die()
     {
-        SaveLoad.LoadGame();
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

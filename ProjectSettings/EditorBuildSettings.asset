@@ -10,13 +10,13 @@ EditorBuildSettings:
     guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Menu.unity
-    guid: 620dbaef04c53cf44b432a8ab6bfac94
+    guid: 5b422bd4b0dd4354c9eac01b01ef2e8a
   - enabled: 1
     path: Assets/Scenes/GrandMomHouse.unity
     guid: 2324a1f8f3251e34b9a8a2692abf91fd
   - enabled: 1
-    path: Assets/Scenes/Test.unity
-    guid: 58e0deb7a9431bd4f81e2a425f972ac8
-  - enabled: 1
     path: Assets/Scenes/TheForest.unity
     guid: 3f40a79121a9c134eac4bb902425f2fe
+  - enabled: 1
+    path: Assets/Scenes/Test.unity
+    guid: 58e0deb7a9431bd4f81e2a425f972ac8

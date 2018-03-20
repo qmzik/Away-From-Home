@@ -10,7 +10,7 @@ public class SaveLoad : MonoBehaviour {
         IsSaveExist = true;
     }
 
-    public static void LoadGame()
+    public void LoadGame()
     {
         SceneManager.LoadScene(PlayerPrefs.GetInt("savedLevel"));
     }
