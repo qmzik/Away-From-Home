@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeroController : MonoBehaviour
 {
@@ -111,7 +112,7 @@ public class HeroController : MonoBehaviour
 
     void Die()
     {
-
+        SceneManager.LoadScene("Death");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

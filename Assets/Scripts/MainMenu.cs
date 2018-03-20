@@ -5,19 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject ContinueButton;
-
-    private void Start()
-    {
-        if (SaveLoad.IsSaveExist)
-        {
-            ContinueButton.SetActive(true);
-        }
-        else
-        {
-            ContinueButton.SetActive(false);
-        }
-    }
 
     public void PlayGame()
     {
