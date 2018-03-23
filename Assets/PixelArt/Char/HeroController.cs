@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeroController : MonoBehaviour
 {
@@ -109,11 +110,21 @@ public class HeroController : MonoBehaviour
         isJumpCooldown = false;
     }
 
+    void Die()
+    {
+        SceneManager.LoadScene("Death");
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
             isJumping = false;
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Die();
         }
     }
 }

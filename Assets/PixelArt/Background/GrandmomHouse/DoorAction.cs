@@ -25,7 +25,7 @@ public class DoorAction : MonoBehaviour {
     void Update () {
 		if(Input.GetKeyDown(KeyCode.E) && canIGo)
         {
-            SceneManager.LoadScene("TheForest");
+            SaveLoad.GoToNextSceneAndSave();
         }
 	}
 }

@@ -12,12 +12,12 @@ namespace Assets.Scripts
 
         protected void MoveRight()
         {
-            AI.transform.position += AI.transform.right * speed * Time.deltaTime;
+            AI.transform.position += Vector3.right * speed * Time.deltaTime;
         }
 
         protected void MoveLeft()
         {
-            AI.transform.position -= AI.transform.right * speed * Time.deltaTime;
+            AI.transform.position -= Vector3.right * speed * Time.deltaTime;
         }
 
         protected void FlipDirection()
@@ -26,8 +26,7 @@ namespace Assets.Scripts
             {
                 direction = Direction.left;
             }
-
-            if (direction == Direction.left)
+            else if (direction == Direction.left)
             {
                 direction = Direction.right;
             }
