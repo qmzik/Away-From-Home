@@ -7,16 +7,14 @@ public class Piranha : AbstractAI {
     public GameObject border;
     bool colliding = false;
 
-	// Use this for initialization
 	void Start () {
         AI = gameObject;
         direction = Direction.left;
     }
 	
-	// Update is called once per frame
 	void Update () {
 
-        colliding = Physics2D.Linecast(border.transform.position, border.transform.position);
+        colliding = Physics2D.Linecast(border.transform.position, border.transform.position, 1 << 8);
 
         if (direction == Direction.left)
         {
