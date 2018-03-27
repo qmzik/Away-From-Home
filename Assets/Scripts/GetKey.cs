@@ -6,6 +6,7 @@ public class GetKey : MonoBehaviour {
     {
         if(collision.gameObject.tag == "Player")
         {
+            CollectKeys.keys.Add(gameObject);
             Destroy(gameObject);
         }
     }
