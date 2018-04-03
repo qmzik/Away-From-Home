@@ -126,6 +126,12 @@ public class HeroController : MonoBehaviour
         {
             Die();
         }
+
+        if (collision.gameObject.tag == "JumpForce")
+        {
+            isJumping = true;
+            rb.AddForce(new Vector2(0, JumpForce * 2));
+        }
     }
 }
 
