@@ -8,6 +8,8 @@ TagManager:
   - Wall
   - Enemy
   - Key
+  - JumpForce
+  - EnemyForAI
   layers:
   - Default
   - TransparentFX

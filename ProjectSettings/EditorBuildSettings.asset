@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TheForest.unity
     guid: 3f40a79121a9c134eac4bb902425f2fe
   - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: c743f849cbbf4614e9d1a8c655c5091f
+  - enabled: 1
     path: Assets/Scenes/Test.unity
     guid: 58e0deb7a9431bd4f81e2a425f972ac8
   - enabled: 1
