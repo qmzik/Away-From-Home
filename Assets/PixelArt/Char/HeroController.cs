@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -49,7 +48,7 @@ public class HeroController : MonoBehaviour
         {
             if (direction != Direction.right)
             {
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                FlipDirection();
             }
             direction = Direction.right;
 
@@ -103,6 +102,10 @@ public class HeroController : MonoBehaviour
             rb.AddForce(new Vector2(0, JumpForce));
             Invoke("JumpingCoolDown", jumpCooldown);
         }
+    }
+    void FlipDirection()
+    {
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
 
     void JumpingCoolDown()
