@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -3042,7 +3043,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4113414784163794, guid: 0596f8d04159ad04fbe0058ea6f694ba, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114017025881102488, guid: 0596f8d04159ad04fbe0058ea6f694ba,
         type: 2}
@@ -3135,11 +3136,6 @@ Transform:
   m_Father: {fileID: 1645677677}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &1384132700 stripped
-Camera:
-  m_PrefabParentObject: {fileID: 20784280471556394, guid: 60d126bd6156002448a92e9fcfac18b4,
-    type: 2}
-  m_PrefabInternal: {fileID: 2022946646}
 --- !u!1 &1390622711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3731,7 +3727,7 @@ Prefab:
         type: 2}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1384132700}
+      objectReference: {fileID: 0}
     - target: {fileID: 224713628090147054, guid: 850d7e53bb656144eae1be0cacfe971f,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -4361,6 +4357,11 @@ Prefab:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 114017101146585570, guid: 60d126bd6156002448a92e9fcfac18b4,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 442303054}
+    - target: {fileID: 114592474072492794, guid: 60d126bd6156002448a92e9fcfac18b4,
         type: 2}
       propertyPath: target
       value: 
