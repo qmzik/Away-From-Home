@@ -4,14 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class HeroController : Movement
 {
-
-    public float Walkspeed;
-    public float JumpForce;
     //public AudioClip walk, run, jump, gotPoint, hit;
 
     //private AudioSource audioSource;
     private GameObject player;
-    private Rigidbody2D rb;
     private Animator animator;
     private bool isJumping = false;
     private float jumpCooldown = 0.5f;
@@ -77,24 +73,18 @@ public class HeroController : Movement
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
         {
-            Jump();
-        }
-    }
-
-    void Jump()
-    {
-        State = CharState.jump;
-        if (!isJumping && !isJumpCooldown)
-        {
-            //audioSource.PlayOneShot(jump);
-            isJumping = true;
-            isJumpCooldown = true;
-            rb.AddForce(new Vector2(0, JumpForce));
-            Invoke("JumpingCoolDown", jumpCooldown);
+            State = CharState.jump;
+            if (!isJumping && !isJumpCooldown)
+            {
+                //audioSource.PlayOneShot(jump);
+                isJumping = true;
+                isJumpCooldown = true;
+                Jump();
+                Invoke("JumpingCoolDown", jumpCooldown);
+            }
         }
     }
     
-
     void JumpingCoolDown()
     {
         isJumpCooldown = false;

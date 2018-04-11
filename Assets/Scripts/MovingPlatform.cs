@@ -36,14 +36,14 @@ public class MovingPlatform : Movement
 
         if (direction == Direction.left)
         {
-            objectOfGame.transform.position -= objectOfGame.transform.right * speed * Time.deltaTime;
-            currentPosition -= speed * Time.deltaTime;
+            objectOfGame.transform.position -= objectOfGame.transform.right * Speed * Time.deltaTime;
+            currentPosition -= Speed * Time.deltaTime;
         }
 
         if (direction == Direction.right)
         {
-            objectOfGame.transform.position += objectOfGame.transform.right * speed * Time.deltaTime;
-            currentPosition += speed * Time.deltaTime;
+            objectOfGame.transform.position += objectOfGame.transform.right * Speed * Time.deltaTime;
+            currentPosition += Speed * Time.deltaTime;
         }
 
         if (currentPosition < lowBound || currentPosition > upBound)

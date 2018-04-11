@@ -4,20 +4,24 @@ namespace Assets.Scripts
 {
     public abstract class Movement: MonoBehaviour
     {
-        public float speed;
+        public float Speed;
+
+        public float JumpForce;
 
         protected GameObject objectOfGame;
+
+        protected Rigidbody2D rb;
 
         protected Direction direction;
 
         protected void MoveRight()
         {
-            objectOfGame.transform.position += Vector3.right * speed * Time.deltaTime;
+            objectOfGame.transform.position += Vector3.right * Speed * Time.deltaTime;
         }
 
         protected void MoveLeft()
         {
-            objectOfGame.transform.position -= Vector3.right * speed * Time.deltaTime;
+            objectOfGame.transform.position -= Vector3.right * Speed * Time.deltaTime;
         }
 
         protected void FlipDirection()
@@ -32,6 +36,11 @@ namespace Assets.Scripts
             }
 
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+
+        protected void Jump()
+        {
+            rb.AddForce(new Vector2(0, JumpForce));
         }
 
         protected enum Direction
