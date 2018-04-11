@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class caterpillarMoving : AbstractAI {
+public class caterpillarMoving : Movement {
 
 	void Start () {
-        AI = gameObject;
+        objectOfGame = gameObject;
         direction = Direction.left;
 	}
 	

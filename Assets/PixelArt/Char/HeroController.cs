@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HeroController : MonoBehaviour
+public class HeroController : Movement
 {
 
     public float Walkspeed;
@@ -13,7 +13,6 @@ public class HeroController : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
     private Animator animator;
-    private Direction direction = Direction.right;
     private bool isJumping = false;
     private float jumpCooldown = 0.5f;
     private bool isJumpCooldown = false;
@@ -27,10 +26,11 @@ public class HeroController : MonoBehaviour
 
     void Start()
     {
-        player = gameObject;
+        objectOfGame = gameObject;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         //audioSource = GetComponent<AudioSource>();
+        direction = Direction.right;
     }
 
     void Update()
@@ -81,16 +81,6 @@ public class HeroController : MonoBehaviour
         }
     }
 
-    void MoveRight()
-    {
-        player.transform.position += player.transform.right * Walkspeed * Time.deltaTime;
-    }
-
-    void MoveLeft()
-    {
-        player.transform.position -= player.transform.right * Walkspeed * Time.deltaTime;
-    }
-
     void Jump()
     {
         State = CharState.jump;
@@ -103,10 +93,7 @@ public class HeroController : MonoBehaviour
             Invoke("JumpingCoolDown", jumpCooldown);
         }
     }
-    void FlipDirection()
-    {
-        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-    }
+    
 
     void JumpingCoolDown()
     {
@@ -136,12 +123,6 @@ public class HeroController : MonoBehaviour
             rb.AddForce(new Vector2(0, JumpForce * 2));
         }
     }
-}
-
-enum Direction
-{
-    right,
-    left
 }
 
 public enum CharState

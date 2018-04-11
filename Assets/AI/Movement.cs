@@ -2,22 +2,22 @@
 
 namespace Assets.Scripts
 {
-    public abstract class AbstractAI : MonoBehaviour
+    public abstract class Movement: MonoBehaviour
     {
         public float speed;
 
-        protected GameObject AI;
+        protected GameObject objectOfGame;
 
         protected Direction direction;
 
         protected void MoveRight()
         {
-            AI.transform.position += Vector3.right * speed * Time.deltaTime;
+            objectOfGame.transform.position += Vector3.right * speed * Time.deltaTime;
         }
 
         protected void MoveLeft()
         {
-            AI.transform.position -= Vector3.right * speed * Time.deltaTime;
+            objectOfGame.transform.position -= Vector3.right * speed * Time.deltaTime;
         }
 
         protected void FlipDirection()

@@ -1,45 +1,54 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatform : Movement
 {
+    public float endPosition;
 
-    public float speed = 20f;
-    public float distance;
+    private float startPosition;
 
-    private GameObject platform;
-    private Direction direction = Direction.left;
-    private float currentDistance;
+    private float currentPosition;
+    private float lowBound;
+    private float upBound;
     void Start()
     {
-        platform = gameObject;
-        currentDistance = distance;
+        startPosition = transform.position.x;
+
+        if (startPosition > endPosition)
+        {
+            direction = Direction.left;
+            upBound = startPosition;
+            lowBound = endPosition;
+        }
+        else
+        {
+            direction = Direction.right;
+            upBound = endPosition;
+            lowBound = startPosition;
+        }
+
+        objectOfGame = gameObject;
+        currentPosition = startPosition;
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         if (direction == Direction.left)
         {
-            platform.transform.position -= platform.transform.right * speed * Time.deltaTime;
-            currentDistance--;
+            objectOfGame.transform.position -= objectOfGame.transform.right * speed * Time.deltaTime;
+            currentPosition -= speed * Time.deltaTime;
         }
 
         if (direction == Direction.right)
         {
-            platform.transform.position += platform.transform.right * speed * Time.deltaTime;
-            currentDistance++;
+            objectOfGame.transform.position += objectOfGame.transform.right * speed * Time.deltaTime;
+            currentPosition += speed * Time.deltaTime;
         }
 
-        if (currentDistance == 0)
+        if (currentPosition < lowBound || currentPosition > upBound)
         {
-            direction = Direction.right;
-        }
-
-        if (currentDistance == distance)
-        {
-            direction = Direction.left;
+            FlipDirection();
         }
     }
 
@@ -51,13 +60,6 @@ public class MovingPlatform : MonoBehaviour
     void OnCollisionExit2D(Collision2D coll)
     {
         coll.transform.parent = null;
-    }
-
-
-    enum Direction
-    {
-        right,
-        left
     }
 }
 
