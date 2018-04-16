@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SaveLoad : MonoBehaviour {
 
-    public GameObject ObjectLoader;
-    public static bool IsSaveExist = false;
+    public GameObject objectLoader;
+    public static bool isSaveExist = false;
 
     private static int savedGame;
 
@@ -14,20 +14,20 @@ public class SaveLoad : MonoBehaviour {
     {
         if (File.Exists(Application.persistentDataPath + "/savedGames.afh"))
         {
-            IsSaveExist = true;
+            isSaveExist = true;
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/savedGames.afh", FileMode.Open);
             savedGame = (int)bf.Deserialize(file);
             file.Close();
         }
 
-        if (IsSaveExist)
+        if (isSaveExist)
         {
-            ObjectLoader.SetActive(true);
+            objectLoader.SetActive(true);
         }
         else
         {
-            ObjectLoader.SetActive(false);
+            objectLoader.SetActive(false);
         }
     }
 

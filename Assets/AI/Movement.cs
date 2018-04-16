@@ -4,9 +4,9 @@ namespace Assets.Scripts
 {
     public abstract class Movement: MonoBehaviour
     {
-        public float Speed;
+        public float speed;
 
-        public float JumpForce;
+        public float jumpForce;
 
         protected GameObject objectOfGame;
 
@@ -14,17 +14,27 @@ namespace Assets.Scripts
 
         protected Direction direction;
 
-        protected void MoveRight()
+        protected virtual void MoveRight()
         {
-            objectOfGame.transform.position += Vector3.right * Speed * Time.deltaTime;
+            objectOfGame.transform.position += Vector3.right * speed * Time.deltaTime;
         }
 
-        protected void MoveLeft()
+        protected virtual void MoveLeft()
         {
-            objectOfGame.transform.position -= Vector3.right * Speed * Time.deltaTime;
+            objectOfGame.transform.position -= Vector3.right * speed * Time.deltaTime;
         }
 
-        protected void FlipDirection()
+        protected virtual void MoveUp()
+        {
+            objectOfGame.transform.position += Vector3.up * speed * Time.deltaTime;
+        }
+
+        protected virtual void MoveDown()
+        {
+            objectOfGame.transform.position += Vector3.down * speed * Time.deltaTime;
+        }
+
+        protected virtual void FlipDirectionX()
         {
             if (direction == Direction.right)
             {
@@ -38,15 +48,31 @@ namespace Assets.Scripts
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
         }
 
-        protected void Jump()
+        protected virtual void FlipDirectionY()
         {
-            rb.AddForce(new Vector2(0, JumpForce));
+            if (direction == Direction.up)
+            {
+                direction = Direction.down;
+            }
+            else if (direction == Direction.down)
+            {
+                direction = Direction.up;
+            }
+
+            transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
+        }
+
+        protected virtual void Jump()
+        {
+            rb.AddForce(new Vector2(0, jumpForce));
         }
 
         protected enum Direction
         {
             right,
-            left
+            left,
+            up,
+            down
         }
     }
 }

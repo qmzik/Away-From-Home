@@ -28,7 +28,7 @@ public class Piranha : Movement {
 
         if (colliding)
         {
-            FlipDirection();
+            FlipDirectionX();
         }
     }
 }

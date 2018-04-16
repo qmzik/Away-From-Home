@@ -44,7 +44,7 @@ public class HeroController : Movement
         {
             if (direction != Direction.right)
             {
-                FlipDirection();
+                FlipDirectionX();
             }
             direction = Direction.right;
 
@@ -110,7 +110,7 @@ public class HeroController : Movement
         if (collision.gameObject.tag == "JumpForce")
         {
             isJumping = true;
-            rb.AddForce(new Vector2(0, JumpForce * 2));
+            rb.AddForce(new Vector2(0, jumpForce * 2));
         }
     }
 }

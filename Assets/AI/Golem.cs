@@ -19,7 +19,7 @@ public class Golem : Movement {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FlipDirection();
+        FlipDirectionX();
         canIGo = true;
     }
 
