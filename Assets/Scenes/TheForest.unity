@@ -7157,6 +7157,17 @@ MonoBehaviour:
   speed: 9
   jumpForce: 0
   endPosition: 28
+--- !u!114 &1249885077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249885075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ab439a9ef89f8428b21b40c0f378bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1249885079 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4545837607905366, guid: 966da93bb09fda74281ccc7d2ce1f3fe,

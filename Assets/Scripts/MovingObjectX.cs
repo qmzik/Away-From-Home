@@ -1,15 +1,15 @@
 ﻿using Assets.Scripts;
 using UnityEngine;
 
-public class MovingPlatform : Movement
+public class MovingObjectX : Movement
 {
     public float endPosition;
 
     private float startPosition;
-
     private float currentPosition;
     private float lowBound;
     private float upBound;
+
     void Start()
     {
         startPosition = transform.position.x;
@@ -36,13 +36,13 @@ public class MovingPlatform : Movement
 
         if (direction == Direction.left)
         {
-            objectOfGame.transform.position -= objectOfGame.transform.right * speed * Time.deltaTime;
+            MoveLeft();
             currentPosition -= speed * Time.deltaTime;
         }
 
         if (direction == Direction.right)
         {
-            objectOfGame.transform.position += objectOfGame.transform.right * speed * Time.deltaTime;
+            MoveRight();
             currentPosition += speed * Time.deltaTime;
         }
 
@@ -62,16 +62,6 @@ public class MovingPlatform : Movement
         {
             direction = Direction.right;
         }
-    }
-
-    void OnCollisionEnter2D(Collision2D coll)
-    {
-        coll.transform.parent = transform;
-    }
-
-    void OnCollisionExit2D(Collision2D coll)
-    {
-        coll.transform.parent = null;
     }
 }
 
