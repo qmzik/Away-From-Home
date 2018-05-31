@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Piranha : AbstractAI {
+public class Piranha : Movement {
     public GameObject border;
     bool colliding = false;
 
 	void Start () {
-        AI = gameObject;
+        objectOfGame = gameObject;
         direction = Direction.left;
     }
 	
@@ -28,7 +28,7 @@ public class Piranha : AbstractAI {
 
         if (colliding)
         {
-            FlipDirection();
+            FlipDirectionX();
         }
     }
 }

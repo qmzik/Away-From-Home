@@ -3,20 +3,18 @@
 public class TrapActivator : MonoBehaviour {
 
     public GameObject info;
-    public GameObject Trap;
+    public GameObject trap;
     public float trapActiveTime;
     bool isNearEnough = false;
-    bool coolingdown = false;
+    bool coollingdown = false;
 
-	// Use this for initialization
 	void Start () {
-        Trap.SetActive(false);
-        Trap.SetActive(false);
+        trap.SetActive(false);
+        trap.SetActive(false);
 	}
 	
-	// Update is called once per frame
 	void Update () {
-        if (isNearEnough && !coolingdown)
+        if (isNearEnough && !coollingdown)
         {
             info.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
@@ -43,18 +41,18 @@ public class TrapActivator : MonoBehaviour {
 
     void CreateAndDestroyTrap()
     {
-        Trap.SetActive(true);
-        coolingdown = true;
+        trap.SetActive(true);
+        coollingdown = true;
         Invoke("HideTrap", trapActiveTime);
     }
 
     void HideTrap()
     {
-        Trap.SetActive(false);
+        trap.SetActive(false);
     }
 
     void CooldownEnd()
     {
-        coolingdown = false;
+        coollingdown = false;
     }
 }

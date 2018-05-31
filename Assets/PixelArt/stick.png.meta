@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 56c9770da502f374da4da97ea48794b7
-timeCreated: 1520403332
+guid: 340f8a6683672ca4b89d5812b1f3b5f0
+timeCreated: 1523855271
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: caterpillar_0
-    21300002: caterpillar_1
-    21300004: caterpillar_2
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -43,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -68,7 +65,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -78,52 +74,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: caterpillar_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 13
-        width: 4
-        height: 2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: caterpillar_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 10
-        width: 4
-        height: 2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: caterpillar_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 8
-        width: 4
-        height: 2
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
+    sprites: []
     outline: []
     physicsShape: []
   spritePackingTag: 

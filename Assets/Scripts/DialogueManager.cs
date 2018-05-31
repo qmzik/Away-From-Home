@@ -12,7 +12,6 @@ public class DialogueManager : MonoBehaviour {
     private HeroController heroController;
     private Queue<string> sentences;
 
-	// Use this for initialization
 	void Start () {
         sentences = new Queue<string>();
         dialoguePanel.SetActive(false);

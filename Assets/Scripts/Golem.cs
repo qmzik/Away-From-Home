@@ -1,16 +1,17 @@
 ﻿using Assets.Scripts;
 using UnityEngine;
 
-public class Golem : AbstractAI {
+public class Golem : Movement {
 
     bool canIGo = false;
 
 	void Start () {
-        AI = gameObject;
+        objectOfGame = gameObject;
         direction = Direction.right;
 	}
 	
 	void Update () {
+
 		if (canIGo)
         {
             MoveLeft();
@@ -19,7 +20,7 @@ public class Golem : AbstractAI {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FlipDirection();
+        FlipDirectionX();
         canIGo = true;
     }
 
