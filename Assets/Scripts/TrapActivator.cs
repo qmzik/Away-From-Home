@@ -8,13 +8,11 @@ public class TrapActivator : MonoBehaviour {
     bool isNearEnough = false;
     bool coollingdown = false;
 
-	// Use this for initialization
 	void Start () {
         trap.SetActive(false);
         trap.SetActive(false);
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if (isNearEnough && !coollingdown)
         {

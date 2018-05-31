@@ -4,9 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class HeroController : Movement
 {
-    //public AudioClip walk, run, jump, gotPoint, hit;
-
-    //private AudioSource audioSource;
     private GameObject player;
     private Animator animator;
     private bool isJumping = false;
@@ -25,7 +22,6 @@ public class HeroController : Movement
         objectOfGame = gameObject;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        //audioSource = GetComponent<AudioSource>();
         direction = Direction.right;
     }
 
@@ -76,7 +72,6 @@ public class HeroController : Movement
             State = CharState.jump;
             if (!isJumping && !isJumpCooldown)
             {
-                //audioSource.PlayOneShot(jump);
                 isJumping = true;
                 isJumpCooldown = true;
                 Jump();

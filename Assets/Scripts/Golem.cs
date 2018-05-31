@@ -11,6 +11,7 @@ public class Golem : Movement {
 	}
 	
 	void Update () {
+
 		if (canIGo)
         {
             MoveLeft();
