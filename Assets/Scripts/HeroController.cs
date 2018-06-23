@@ -9,6 +9,8 @@ public class HeroController : Movement
     private bool isJumping = false;
     private float jumpCooldown = 0.5f;
     private bool isJumpCooldown = false;
+    public int HP;
+    private GUIStyle style; 
 
 
     private CharState State
@@ -90,6 +92,19 @@ public class HeroController : Movement
         SceneManager.LoadScene("Death");
     }
 
+    void GetDamage()
+    {
+        if (HP == 0)
+        {
+            Die();
+        }
+        else
+        {
+            HP--;
+        }
+
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -107,6 +122,19 @@ public class HeroController : Movement
             isJumping = true;
             rb.AddForce(new Vector2(0, jumpForce * 2));
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            GetDamage();
+        }
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(10, 10, 100, 20), HP.ToString());
     }
 }
 
